@@ -26,4 +26,5 @@ works!
 
 once the file is in github it will have a raw link and that won't change when you update it.  Nice.  But will the pages site re-render the site correctly with the updated image or will it aggressively cache, like it does when you include svg file in regular readme in regular github pages?
 
+Looks like it did change, but you have to change some text on the page, otherwise the page is cached - cos the svg *image url* is the same and there is no intelligence detecting it has changed. So change some text on the page instead. This is better than fiddling with imaginary image query strings on the image reference urls in order to try and trick github to re-render the page.
 
