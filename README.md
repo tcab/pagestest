@@ -7,5 +7,8 @@ see also the `hello.yml` file in .github/workflows which apparently spins up ubu
 
 Interesting, so when you have the 'github pages' set to main master, it just uses your normal `README.md` as its content.
 
-So what if we add an `index.md` ?
+So what if we add an `index.md` ? Yes, it then takes priority 👍
+
+What about if we add `index.html` ?
+
 
