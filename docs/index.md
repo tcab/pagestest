@@ -12,11 +12,18 @@ Opeth test image below:
 
 ## SVG
 
-trying to get proper svg by uploading the image to github into the images folder and then finding the raw url - I don't think this will work
+trying to get proper svg by uploading the image to github into the images folder and then finding the raw url - this doesn't work
 
 ![mvc-a-architecture](https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg)
 
 try again adding `?sanitize=true` as per [this post(https://github.community/t5/How-to-use-Git-and-GitHub/Embedding-a-SVG/td-p/2192)]:
 
 ![mvc-a-architecture](https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg?sanitize=true)
+
+works!
+
+## changing SVG
+
+once the file is in github it will have a raw link and that won't change when you update it.  Nice.  But will the pages site re-render the site correctly with the updated image or will it aggressively cache, like it does when you include svg file in regular readme in regular github pages?
+
 
