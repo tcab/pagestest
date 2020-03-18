@@ -28,3 +28,6 @@ once the file is in github it will have a raw link and that won't change when yo
 
 Looks like it did change, but you have to change some text on the page, otherwise the page is cached - cos the svg *image url* is the same and there is no intelligence detecting it has changed. So change some text on the page instead. This is better than fiddling with imaginary image query strings on the image reference urls in order to try and trick github to re-render the page.
 
+## Links to other pages
+
+[page2](page2.md)
