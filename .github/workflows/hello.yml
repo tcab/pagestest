@@ -32,4 +32,5 @@ jobs:
         echo Add other actions to build,
         echo test, and deploy your project.
         ls
-        echo that was an ls command :-)
+        echo "that was an ls command :-)"
+        ls -la
