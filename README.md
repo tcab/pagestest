@@ -5,3 +5,5 @@ hi there.
 
 see also the `hello.yml` file in .github/workflows which apparently spins up ubuntu and then runs some commands - every time you push?
 
+Interesting, so when you have the 'github pages' set to main master, it just uses your normal readme.md as its content.
+
