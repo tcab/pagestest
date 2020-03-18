@@ -10,6 +10,10 @@ Opeth test image below:
 
 ![mvc-a-architecture](https://user-images.githubusercontent.com/830777/76916676-4c169700-6915-11ea-9157-c74e4b1ff234.png)
 
+Full size png [here](https://user-images.githubusercontent.com/830777/76916676-4c169700-6915-11ea-9157-c74e4b1ff234.png)
+
+Full size svg [here](https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg?sanitize=true)
+
 ## SVG
 
 trying to get proper svg by uploading the image to github into the images folder and then finding the raw url - this doesn't work
