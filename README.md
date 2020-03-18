@@ -18,24 +18,36 @@ And you have to re-select a theme, so that the `_config.yml` is created in the `
 
 Works OK.
 
+## Using the "minimal theme"
 Doco on the minimal theme can be found [here](https://github.com/pages-themes/minimal) - it seems you need to:
 
 Configuration variables
 
 Minimal will respect the following variables, if set in your site's `_config.yml`:
 
-```
+```yml
 title: [The title of your site]
 description: [A short description of your site's purpose]
 ```
 
 Additionally, you may choose to set the following optional variables:
 
-```
+```yml
 logo: [Location of the logo]
 show_downloads: ["true" or "false" to indicate whether to provide a download URL]
 google_analytics: [Your Google Analytics tracking ID]
 ```
 
+Tip: The `[]` brackets are not needed and must be replaced with your content.
+e.g.
+
+```yml
+theme: jekyll-theme-minimal
+logo: https://user-images.githubusercontent.com/830777/76915877-dc9fa800-6912-11ea-8c1a-08a0ab767f1a.jpg
+```
+
+## Inserting Images
+
+Great [tip](https://ardalis.com/add-images-easily-to-github): simply **paste** an image into a dummy GitHub *issue* and the markdown is created for you - discard the issue when done.  The image is __hosted somewhere internally inside GitHub__. 🤗
 
 
