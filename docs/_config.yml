@@ -2,7 +2,7 @@
 # logo: https://i.imgur.com/jUMGXOG.png
 
 
-# theme: jekyll-theme-cayman
+theme: jekyll-theme-cayman
 
 
 # retlab theme related - see https://github.com/benbalter/retlab 
@@ -24,10 +24,10 @@
 
 # minima theme - see https://github.com/jekyll/minima
 # 
-remote_theme: jekyll/minima
-header_pages:
-    - index.html
-    - page2.md
+# remote_theme: jekyll/minima
+# header_pages:
+#     - index.html
+#     - page2.md
 
 
 
