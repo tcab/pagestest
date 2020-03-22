@@ -14,6 +14,8 @@ Here is a string built using site data and filters:
 
 Here is a for loop:
 
+The var *site.data.people* is {{ site.data.people }}
+
 {% for item in site.data.people %}
 * {{ item.name }} of *{{ item.address }}* 
 {% endfor %}
