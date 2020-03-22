@@ -1,6 +1,14 @@
-# test of pages on GitHub via /docs
+# test of pages on GitHub served from /docs dir
 
 Hi from the docs dir. 🤟
+
+## Accessing jekyll data
+
+{{ site.info1 | prepend:site.baseurl }}
+
+{{ site.info2 }}
+
+## Images
 
 Opeth test image below:
 
