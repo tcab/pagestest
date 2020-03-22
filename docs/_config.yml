@@ -1,6 +1,24 @@
 # theme: jekyll-theme-minimal
 # logo: https://i.imgur.com/jUMGXOG.png
-theme: jekyll-theme-cayman
+# theme: jekyll-theme-cayman
+
+
+
+
+# retlab theme related
+remote_theme: benbalter/retlab
+title: Andy
+description: Programmer, open source developer, tai chi master
+# Pages to include in header navigation
+nav_pages:
+    - index.html
+    - page2.md
+# Pages to include in footer navigation
+footer_pages:
+    - index.html
+    - page2.md  
+
+
 
 # Andy added
 info1: "this is info 1"
