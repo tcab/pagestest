@@ -4,7 +4,7 @@ Hi from the docs dir. 🤟
 
 ## Accessing jekyll data
 
-**info1:** {{ site.info1 | prepend:site.baseurl }}
+**info1:** {{ site.info1 }}
 
 **info2:** {{ site.info2 }}
 
@@ -12,6 +12,12 @@ Here is a string built using site data and filters:
 
 {{ site.info2 | prepend:site.baseurl | upcase }}
 
+Here is a for loop:
+
+{% for item in site.data.people %}
+* {{ item.name }} of *{{ item.address }}* 
+{% endfor %}
+    
 ## Images
 
 Opeth test image below:
