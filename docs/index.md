@@ -14,12 +14,15 @@ Here is a string built using site data and filters:
 
 Here is a for loop:
 
-The var *site.data.people* is {{ site.data.people }}
+The var *site.data.people* is 
+```ruby
+{{ site.data.people }}
+```
 
 {% for item in site.data.people %}
-* {{ item.name }} of *{{ item.address }}* 
+* {{ item.name }} of *{{ item.address }}* [{{ item.name }}]({{ http://www.google.com }})
 {% endfor %}
-    
+
 ## Images
 
 Opeth test image below:
