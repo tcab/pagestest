@@ -12,7 +12,7 @@ Here is a string built using site data and filters:
 
 {{ site.info2 | prepend:site.baseurl | upcase }}
 
-Here is a for loop:
+### Here is a for loop:
 
 The var *site.data.people* is 
 ```ruby
@@ -20,7 +20,7 @@ The var *site.data.people* is
 ```
 
 {% for item in site.data.people %}
-* {{ item.name }} of *{{ item.address }}* [{{ item.name }}]({{ http://www.google.com }})
+* {{ item.name }} of *{{ item.address }}* [{{ item.name }}](http://www.google.com)
 {% endfor %}
 
 ## Images
