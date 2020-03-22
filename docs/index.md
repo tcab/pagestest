@@ -4,9 +4,13 @@ Hi from the docs dir. 🤟
 
 ## Accessing jekyll data
 
-{{ site.info1 | prepend:site.baseurl }}
+**info1:** {{ site.info1 | prepend:site.baseurl }}
 
-{{ site.info2 }}
+**info2:** {{ site.info2 }}
+
+Here is a string built using site data and filters:
+
+{{ site.info2 | prepend:site.baseurl | upcase }}
 
 ## Images
 
