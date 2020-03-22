@@ -1,22 +1,33 @@
 # theme: jekyll-theme-minimal
 # logo: https://i.imgur.com/jUMGXOG.png
+
+
 # theme: jekyll-theme-cayman
 
 
+# retlab theme related - see https://github.com/benbalter/retlab 
+# 
+# remote_theme: benbalter/retlab
+# title: Andy
+# description: Programmer, open source developer, tai chi master
+# # Pages to include in header navigation
+# nav_pages:
+#     - index.html
+#     - page2.md
+# # Pages to include in footer navigation
+# footer_pages:
+#     - index.html
+#     - page2.md  
 
 
-# retlab theme related
-remote_theme: benbalter/retlab
-title: Andy
-description: Programmer, open source developer, tai chi master
-# Pages to include in header navigation
-nav_pages:
+
+
+# minima theme - see https://github.com/jekyll/minima
+# 
+remote_theme: jekyll/minima
+header_pages:
     - index.html
     - page2.md
-# Pages to include in footer navigation
-footer_pages:
-    - index.html
-    - page2.md  
 
 
 
