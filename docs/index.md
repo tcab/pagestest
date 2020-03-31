@@ -1,3 +1,6 @@
+---
+url1: https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg?sanitize=true
+---
 # test of pages on GitHub served from /docs dir
 
 Hi from the docs dir. 🤟
@@ -70,6 +73,9 @@ Even though it makes for more complex urls, try to mitigate lack of link problem
 
 [![mvc-a-architecture](https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg?sanitize=true)](https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg?sanitize=true)
 
+Here is an attempt at using jekyl page variable to simplify the url syntax of this image ref.
+
+[![mvc-a-architecture]({{page.url1}})]({{page.url1}}))
 
 ### 2 - "Naive" technique
 
