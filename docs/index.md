@@ -62,10 +62,10 @@ Need to add `?sanitize=true` for this to work, as per [this post](https://github
 
 - works locally on dev machine
 - works on github pages via /docs ✅
-- CLICKING ON IMAGE - **does nothing** - no link is active! ❌
+- CLICKING ON IMAGE - **does nothing** - no link is active! ❌ mitigation works ✅
 
 
-try to mitigate lack of link problem with the advice:
+Even though it makes for more complex urls, try to mitigate lack of link problem with the advice:
 > In other words, whatever the syntax for the image, treat that whole syntax as the text to link. So the ugly syntax also works: `[![alt text](image link)](web link)`
 
 [![mvc-a-architecture](https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg?sanitize=true)](https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg?sanitize=true)
@@ -80,11 +80,11 @@ try to mitigate lack of link problem with the advice:
 ![mvc-a-architecture](./images/mvc-a-architecture.svg)
 
 - works on github pages via /docs ✅
-- CLICKING ON IMAGE - **does nothing** - no link is active! ❌
+- CLICKING ON IMAGE - **does nothing** - no link is active! ❌ mitigation works ✅
 - works locally on dev machine
 - note that `?sanitize=true` not needed, though doesn't hurt.
 
-try to mitigate lack of link problem with the advice:
+Even though it makes for more complex urls, try to mitigate lack of link problem with the advice:
 > In other words, whatever the syntax for the image, treat that whole syntax as the text to link. So the ugly syntax also works: `[![alt text](image link)](web link)`
 
 [![mvc-a-architecture](./images/mvc-a-architecture.svg)](./images/mvc-a-architecture.svg)
@@ -101,13 +101,13 @@ http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulk
 ![code map example 01](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg)
 
 - works on github pages via /docs, but.... ALSO too slow to refresh, ALSO sometimes image fails to appear probably due to timeout. ✅😯
-- CLICKING ON IMAGE - **does nothing** - no link is active! 😱
+- CLICKING ON IMAGE - **does nothing** - no link is active!  ❌  mitigation works ✅😱 (but slow and also risks timing out)
 - does not work locally on dev machine - at least not in vscode previewer.
 - *may* work in local jekyll server but this project isn't set up with local jekill
 
 I thought maybe Github Pages hosting would improve the "regeneration" technique success rate, but its the same problem.  Overall its a flaky technique. In fact it might be even worse on Github Pages.
 
-try to mitigate lack of link problem with the advice:
+Even though it makes for more complex urls, try to mitigate lack of link problem with the advice:
 > In other words, whatever the syntax for the image, treat that whole syntax as the text to link. So the ugly syntax also works: `[![alt text](image link)](web link)`
 
 [![code map example 01](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg)

@@ -75,7 +75,7 @@ Need to add `?sanitize=true` for this to work, as per [this post](https://github
 
 - works locally on dev machine
 - works on github main page README.md ✅
-- nice link to full browser page svg where you can zoom 👍
+- nice link to full browser page svg where you can zoom ✅
 
 
 
@@ -94,6 +94,12 @@ Need to add `?sanitize=true` for this to work, as per [this post](https://github
 - works on main github README ✅
 - CLICKING ON IMAGE - takes you to ugly github framed page  ❌
 - Note that `?sanitize=true` not needed, though doesn't hurt.
+
+Even though it makes for more complex urls, try to mitigate the **ugly github framed page** problem with the advice:
+> In other words, whatever the syntax for the image, treat that whole syntax as the text to link. So the ugly syntax also works: `[![alt text](image link)](web link)`
+[![mvc-a-architecture](./docs/images/mvc-a-architecture.svg)](./docs/images/mvc-a-architecture.svg)
+
+
 
 
 
