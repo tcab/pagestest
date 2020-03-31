@@ -51,32 +51,32 @@ logo: https://user-images.githubusercontent.com/830777/76915877-dc9fa800-6912-11
 Great [tip](https://ardalis.com/add-images-easily-to-github): simply **paste** an image into a dummy GitHub *issue* and the markdown is created for you - discard the issue when done.  The image is __hosted somewhere internally inside GitHub__. 🤗
 
 
+
+
 ## SVG (github main page README.md)
+
+Tested on:
+
+- a regular github markdown page e.g. `README.md`
+- a jeckyll generated github page markdown page
+- locally in vscode markdown previewer
+- TODO local jekyl hosted serving
+
 
 ### 1 - "Sanitised raw" technique
 
 ### attempt 1 (fails)
 
 ```
-https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg
-```
-
-trying to get proper svg by uploading the image to github into the images folder and then finding the raw url - this doesn't work
-
-![mvc-a-architecture](https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg)
-
-### attempt 2 (succeeds)
-
-```
 https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg?sanitize=true
 ```
 
-try again adding `?sanitize=true` as per [this post](https://github.community/t5/How-to-use-Git-and-GitHub/Embedding-a-SVG/td-p/2192) works!:
+Need to add `?sanitize=true` for this to work, as per [this post](https://github.community/t5/How-to-use-Git-and-GitHub/Embedding-a-SVG/td-p/2192):
 
 ![mvc-a-architecture](https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg?sanitize=true)
 
 - works locally on dev machine
-- ? works on github main page README.md
+- works on github main page README.md
 
 
 
@@ -92,23 +92,10 @@ try again adding `?sanitize=true` as per [this post](https://github.community/t5
 ![mvc-a-architecture](./docs/images/mvc-a-architecture.svg)
 
 - works locally on dev machine
-- ?? works on github main page
+- works on main github README
+- CLICKING ON IMAGE - takes you to ugly github framed page
 
-
-
-try sanitising...
-
-```
-./docs/images/mvc-a-architecture.svg?sanitize=true
-```
-
-![mvc-a-architecture](./docs/images/mvc-a-architecture.svg?sanitize=true)
-
-- works locally on dev machine
-- ??? works on main github README
-
-
-
+`?sanitize=true` not needed, doesn't hurt.
 
 
 
@@ -118,10 +105,8 @@ try sanitising...
 http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg
 ```
 
-too slow to refresh, sometimes image fails to appear probably due to timeout
-
 ![code map example 01](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg)
 
 - **does not** work locally on dev machine - at least not in vscode previewer.
 - *may* work in local jekyll server but this project isn't set up with local jekill
-- ??? works on main github README
+- works on main github README, but... too slow to refresh, sometimes image fails to appear probably due to timeout

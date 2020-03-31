@@ -37,27 +37,26 @@ Full size png [here](https://user-images.githubusercontent.com/830777/76916676-4
 
 Full size svg [here](https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg?sanitize=true)
 
+
+
+
 ## SVG (github pages via /docs)
 
+Tested on:
+
+- a regular github markdown page e.g. `README.md`
+- a jeckyll generated github page markdown page
+- locally in vscode markdown previewer
+- TODO local jekyl hosted serving
+
+
 ### 1 - "Sanitised raw" technique
-
-### attempt 1 (fails)
-
-```
-https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg
-```
-
-trying to get proper svg by uploading the image to github into the images folder and then finding the raw url - this doesn't work
-
-![mvc-a-architecture](https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg)
-
-### attempt 2 (succeeds)
 
 ```
 https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg?sanitize=true
 ```
 
-try again adding `?sanitize=true` as per [this post](https://github.community/t5/How-to-use-Git-and-GitHub/Embedding-a-SVG/td-p/2192) works!:
+Need to add `?sanitize=true` for this to work, as per [this post](https://github.community/t5/How-to-use-Git-and-GitHub/Embedding-a-SVG/td-p/2192):
 
 ![mvc-a-architecture](https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg?sanitize=true)
 
@@ -82,20 +81,10 @@ try again adding `?sanitize=true` as per [this post](https://github.community/t5
 
 - works locally on dev machine
 - works on github pages via /docs
+- CLICKING ON IMAGE - **does nothing** - no link is active!
 
+`?sanitize=true` not needed, doesn't hurt.
 
-
-
-try sanitising...
-
-```
-./images/mvc-a-architecture.svg?sanitize=true
-```
-
-![mvc-a-architecture](./images/mvc-a-architecture.svg?sanitize=true)
-
-- works locally on dev machine
-- ??? works on github pages via /docs
 
 
 
@@ -110,19 +99,13 @@ try sanitising...
 http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg
 ```
 
-too slow to refresh, sometimes image fails to appear probably due to timeout
-
-**does not** work locally on dev machine - at least not in vscode previewer.
-
-> *may* work in local jekyll server but this project isn't set up with local jekill
-
 ![code map example 01](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg)
 
 - **does not** work locally on dev machine - at least not in vscode previewer.
 - *may* work in local jekyll server but this project isn't set up with local jekill
-- ??? works on github pages via /docs
+- works on github pages via /docs, but.... ALSO too slow to refresh, ALSO sometimes image fails to appear probably due to timeout. 
 
-
+I thought maybe Github Pages hosting would improve the "regeneration" technique success rate, but its the same problem.  Overall its a flaky technique.
 
 
 
