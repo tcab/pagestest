@@ -51,17 +51,23 @@ trying to get proper svg by uploading the image to github into the images folder
 
 ![mvc-a-architecture](https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg)
 
-### attempt 1 (succeeds)
+### attempt 2 (succeeds)
 
 ```
 https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg?sanitize=true
 ```
 
-try again adding `?sanitize=true` as per [this post(https://github.community/t5/How-to-use-Git-and-GitHub/Embedding-a-SVG/td-p/2192)]:
+try again adding `?sanitize=true` as per [this post](https://github.community/t5/How-to-use-Git-and-GitHub/Embedding-a-SVG/td-p/2192) works!:
 
 ![mvc-a-architecture](https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg?sanitize=true)
 
-works!
+- works locally on dev machine
+- works on github pages via /docs
+
+
+
+
+
 
 ### 2 - "Naive" technique
 
@@ -69,9 +75,34 @@ works!
 ./images/mvc-a-architecture.svg
 ```
 
-works locally on dev machine.
+- works locally on dev machine.
+- works on github pages via /docs
 
 ![mvc-a-architecture](./images/mvc-a-architecture.svg)
+
+- works locally on dev machine
+- works on github pages via /docs
+
+
+
+
+try sanitising...
+
+```
+./images/mvc-a-architecture.svg?sanitize=true
+```
+
+![mvc-a-architecture](./images/mvc-a-architecture.svg?sanitize=true)
+
+- works locally on dev machine
+- ??? works on github pages via /docs
+
+
+
+
+
+
+
 
 ### 3 - "Regeneration" from .puml technique
 
@@ -86,6 +117,14 @@ too slow to refresh, sometimes image fails to appear probably due to timeout
 > *may* work in local jekyll server but this project isn't set up with local jekill
 
 ![code map example 01](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg)
+
+- **does not** work locally on dev machine - at least not in vscode previewer.
+- *may* work in local jekyll server but this project isn't set up with local jekill
+- ??? works on github pages via /docs
+
+
+
+
 
 ## Regular GitHub serving vs. GitHub Pages serving
 
