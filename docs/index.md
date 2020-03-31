@@ -62,6 +62,7 @@ Need to add `?sanitize=true` for this to work, as per [this post](https://github
 
 - works locally on dev machine
 - works on github pages via /docs
+- nice link to full browser page svg where you can zoom 👍
 
 
 
@@ -74,17 +75,12 @@ Need to add `?sanitize=true` for this to work, as per [this post](https://github
 ./images/mvc-a-architecture.svg
 ```
 
-- works locally on dev machine.
-- works on github pages via /docs
-
 ![mvc-a-architecture](./images/mvc-a-architecture.svg)
 
-- works locally on dev machine
 - works on github pages via /docs
-- CLICKING ON IMAGE - **does nothing** - no link is active!
-
-`?sanitize=true` not needed, doesn't hurt.
-
+- CLICKING ON IMAGE - **does nothing** - no link is active! ❌❌
+- works locally on dev machine
+- note that `?sanitize=true` not needed, though doesn't hurt.
 
 
 
@@ -101,9 +97,10 @@ http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulk
 
 ![code map example 01](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg)
 
-- **does not** work locally on dev machine - at least not in vscode previewer.
+- works on github pages via /docs, but.... ALSO too slow to refresh, ALSO sometimes image fails to appear probably due to timeout. 😯
+- CLICKING ON IMAGE - **does nothing** - no link is active! 😱
+- does not work locally on dev machine - at least not in vscode previewer.
 - *may* work in local jekyll server but this project isn't set up with local jekill
-- works on github pages via /docs, but.... ALSO too slow to refresh, ALSO sometimes image fails to appear probably due to timeout. 
 
 I thought maybe Github Pages hosting would improve the "regeneration" technique success rate, but its the same problem.  Overall its a flaky technique.
 

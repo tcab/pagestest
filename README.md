@@ -65,8 +65,6 @@ Tested on:
 
 ### 1 - "Sanitised raw" technique
 
-### attempt 1 (fails)
-
 ```
 https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg?sanitize=true
 ```
@@ -77,6 +75,7 @@ Need to add `?sanitize=true` for this to work, as per [this post](https://github
 
 - works locally on dev machine
 - works on github main page README.md
+- nice link to full browser page svg where you can zoom 👍
 
 
 
@@ -92,10 +91,9 @@ Need to add `?sanitize=true` for this to work, as per [this post](https://github
 ![mvc-a-architecture](./docs/images/mvc-a-architecture.svg)
 
 - works locally on dev machine
-- works on main github README
-- CLICKING ON IMAGE - takes you to ugly github framed page
-
-`?sanitize=true` not needed, doesn't hurt.
+- works on main github README ✅
+- CLICKING ON IMAGE - takes you to ugly github framed page  ❌
+- Note that `?sanitize=true` not needed, though doesn't hurt.
 
 
 
@@ -107,6 +105,7 @@ http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulk
 
 ![code map example 01](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg)
 
-- **does not** work locally on dev machine - at least not in vscode previewer.
+- works on main github README, but... too slow to refresh, sometimes image fails to appear probably due to timeout 😯
+- CLICKING ON IMAGE works and takes you to some `https://camo.githubusercontent.com/...` url where you get the full screen SVG and can zoom ok ✅
+- does not work locally on dev machine - at least not in vscode previewer.
 - *may* work in local jekyll server but this project isn't set up with local jekill
-- works on main github README, but... too slow to refresh, sometimes image fails to appear probably due to timeout
