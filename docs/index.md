@@ -11,6 +11,8 @@ Hi from the docs dir. 🤟
 
 **info2:** {{ site.info2 }}
 
+**url1** {{ page.url1 }}
+
 Here is a string built using site data and filters:
 
 {{ site.info2 | prepend:site.baseurl | upcase }}
@@ -73,9 +75,9 @@ Even though it makes for more complex urls, try to mitigate lack of link problem
 
 [![mvc-a-architecture](https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg?sanitize=true)](https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg?sanitize=true)
 
-Here is an attempt at using jekyl page variable to simplify the url syntax of this image ref.
+Here is an attempt at using jekyl page variable to simplify the url syntax of this image ref. WORKS! 😊
 
-[![mvc-a-architecture]({{page.url1}})]({{page.url1}}))
+[![mvc-a-architecture]({{page.url1}})]({{page.url1}})
 
 ### 2 - "Naive" technique
 
