@@ -51,3 +51,53 @@ logo: https://user-images.githubusercontent.com/830777/76915877-dc9fa800-6912-11
 Great [tip](https://ardalis.com/add-images-easily-to-github): simply **paste** an image into a dummy GitHub *issue* and the markdown is created for you - discard the issue when done.  The image is __hosted somewhere internally inside GitHub__. 🤗
 
 
+## SVG (github main page)
+
+### 1 - "Sanitised raw" technique
+
+### attempt 1 (fails)
+
+```
+https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg
+```
+
+trying to get proper svg by uploading the image to github into the images folder and then finding the raw url - this doesn't work
+
+![mvc-a-architecture](https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg)
+
+### attempt 1 (succeeds)
+
+```
+https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg?sanitize=true
+```
+
+try again adding `?sanitize=true` as per [this post(https://github.community/t5/How-to-use-Git-and-GitHub/Embedding-a-SVG/td-p/2192)]:
+
+![mvc-a-architecture](https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg?sanitize=true)
+
+works!
+
+### 2 - "Naive" technique
+
+```
+./images/mvc-a-architecture.svg
+```
+
+works locally on dev machine.
+
+![mvc-a-architecture](./images/mvc-a-architecture.svg)
+
+### 3 - "Regeneration" from .puml technique
+
+```
+http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg
+```
+
+too slow to refresh, sometimes image fails to appear probably due to timeout
+
+**does not** work locally on dev machine - at least not in vscode previewer.
+
+> *may* work in local jekyll server but this project isn't set up with local jekill
+
+![code map example 01](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg)
+

@@ -37,11 +37,25 @@ Full size png [here](https://user-images.githubusercontent.com/830777/76916676-4
 
 Full size svg [here](https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg?sanitize=true)
 
-## SVG
+## SVG (github pages via /docs)
+
+### 1 - "Sanitised raw" technique
+
+### attempt 1 (fails)
+
+```
+https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg
+```
 
 trying to get proper svg by uploading the image to github into the images folder and then finding the raw url - this doesn't work
 
 ![mvc-a-architecture](https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg)
+
+### attempt 1 (succeeds)
+
+```
+https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg?sanitize=true
+```
 
 try again adding `?sanitize=true` as per [this post(https://github.community/t5/How-to-use-Git-and-GitHub/Embedding-a-SVG/td-p/2192)]:
 
@@ -49,7 +63,51 @@ try again adding `?sanitize=true` as per [this post(https://github.community/t5/
 
 works!
 
+### 2 - "Naive" technique
+
+```
+./images/mvc-a-architecture.svg
+```
+
+works locally on dev machine.
+
+![mvc-a-architecture](./images/mvc-a-architecture.svg)
+
+### 3 - "Regeneration" from .puml technique
+
+```
+http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg
+```
+
+too slow to refresh, sometimes image fails to appear probably due to timeout
+
+**does not** work locally on dev machine - at least not in vscode previewer.
+
+> *may* work in local jekyll server but this project isn't set up with local jekill
+
+![code map example 01](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg)
+
+## Regular GitHub serving vs. GitHub Pages serving
+
+All the above techniques need to be tested both on:
+
+- a regular github markdown page e.g. `readme.md`
+- a jeckyll generated github page markdown page
+
+because the serving of the pages may influence the reliability of each technique.
+
+### local serving
+
+Arguably we also need evidence re local serving success via:
+
+- vscode markdown preview
+- jekyll local server
+
 ## changing SVG
+
+**TODO**
+
+More investigation and clarification needed here.
 
 once the file is in github it will have a raw link and that won't change when you update it.  Nice.  But will the pages site re-render the site correctly with the updated image or will it aggressively cache, like it does when you include svg file in regular readme in regular github pages?
 
