@@ -62,6 +62,17 @@ Tested on:
 - locally in vscode markdown previewer
 - TODO local jekyl hosted serving
 
+### Summary
+
+|               | **GitHub README.md**           | **GitHub Pages via /docs** |
+| sanitised raw | perfect                        | perfect  |
+| naive         | ok but ugly github framed page | perfect  |
+| regeneration  | ok but flaky                   | flaky    |
+
+Note:
+- all "GitHub Pages via /docs" techniques need extra syntax to the url to get clickable link
+- perfect means "works, and has nice link to full browser page svg where you can zoom"
+
 
 ### 1 - "Sanitised raw" technique
 

@@ -56,13 +56,14 @@ Tested on:
 
 ### Summary
 
-|               | normal GitHub README.md | GitHub Pages via /docs |
-| sanitised raw | perfect                 | perfect (needs mitigation to get clickable link)    |
-| naive         | ugly github framed page | perfect (needs mitigation to get clickable link)    |
-| regeneration  | flaky                   | flaky (needs mitigation to get clickable link)    |
+|               | **GitHub README.md**           | **GitHub Pages via /docs** |
+| sanitised raw | perfect                        | perfect  |
+| naive         | ok but ugly github framed page | perfect  |
+| regeneration  | ok but flaky                   | flaky    |
 
-> perfect means "works, and has nice link to full browser page svg where you can zoom"
-> mitigate means you need to add extra syntax to the url to make hyperlink work
+Note:
+- all "GitHub Pages via /docs" techniques need extra syntax to the url to get clickable link
+- perfect means "works, and has nice link to full browser page svg where you can zoom"
 
 
 ### 1 - "Sanitised raw" technique
