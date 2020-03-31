@@ -92,7 +92,7 @@ Need to add `?sanitize=true` for this to work, as per [this post](https://github
 
 - works locally on dev machine
 - works on main github README ✅
-- CLICKING ON IMAGE - takes you to ugly github framed page  ❌
+- CLICKING ON IMAGE - takes you to ugly github framed page  ❌ mitigation fails - same ugly page ❌
 - Note that `?sanitize=true` not needed, though doesn't hurt.
 
 Even though it makes for more complex urls, try to mitigate the **ugly github framed page** problem with the advice:
@@ -112,6 +112,6 @@ http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulk
 ![code map example 01](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg)
 
 - works on main github README, but... too slow to refresh, sometimes image fails to appear probably due to timeout ✅😯
-- CLICKING ON IMAGE works and takes you to some `https://camo.githubusercontent.com/...` url where you get the full screen SVG and can zoom ok ✅
+- CLICKING ON IMAGE works and takes you to some `https://camo.githubusercontent.com/...` url where you get the full screen SVG and can zoom ok ✅😯 unreliable and too slow to refresh
 - does not work locally on dev machine - at least not in vscode previewer.
 - *may* work in local jekyll server but this project isn't set up with local jekill
