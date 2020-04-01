@@ -214,7 +214,7 @@ e.g. non cached:   (but with usual flakiness viz. images often not appearing)
 
  Then the question is how to update the images when they have indeed changed and you want to regenerate them?  Altering the url somehow does this. Arguably you could insert and remove some arbitrary url parameter e.g.
 
-cached, but forced to update cos of `&ver=xxx` added, where `xxx` is changed to something else any time you want to update: regens ok?  ✅ and is up to date  **not necessarily updating each time - perhaps my `&ver` trick isn't effective** - still possibly flaky with the image sometimes not appearing? **not sure, seems to appear every time so far**
+cached, but forced to update cos of `&ver=xxx` added, where `xxx` is changed to something else any time you want to update: regens ok?  ✅ and is up to date  **not necessarily updating each time - perhaps my `&ver` trick isn't effective** - and its still flaky with the image sometimes not appearing?
 
 ![code map example 01](http://www.plantuml.com/plantuml/proxy?ver=xx3&fmt=svg&src=https://raw.githubusercontent.com/tcab/pagestest/master/docs/plantuml/example-01.puml)
 
