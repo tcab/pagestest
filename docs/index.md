@@ -56,26 +56,17 @@ Tested on:
 
 ### Summary
 
-|               | **GitHub README.md**           | **GitHub Pages via /docs** |
+|               | GitHub README.md           | GitHub Pages via /docs |
+| --- | --- | --- |
 | sanitised raw | perfect                        | perfect  |
 | naive         | ok but ugly github framed page | perfect  |
-| regeneration  | ok but flaky                   | flaky    |
+| regeneration  | flaky                          | flaky    |
+**(more detailed table on main README.md page [README.md](README.md))**
 
 Note:
 - all "GitHub Pages via /docs" techniques need extra syntax to the url to get clickable link
 - perfect means "works, and has nice link to full browser page svg where you can zoom"
 
-|               | **GitHub README.md**           | **GitHub Pages via /docs** |  Comment |
-| sanitised raw | perfect                        | perfect  | The sanitised raw technique works perfectly in all scenarios, but it does mean precending all your image url references with `https://raw.githubusercontent.com/tcab/pagestest/master/` |
-| naive         | ok but ugly github framed page | perfect  | Thus if its just GitHub Pages hosting, the naive technique is fine - even though the url has an extra part to it its still a short, easy url, with no `raw.githubusercontent.com` urls.  Naive technique not suitable on Github main page e,g, README.md due to the ugly github framed page issue - unless you are not expecting people to click on your images. |
-| regeneration  | ok but flaky                   | flaky    | Flakiness is not good, even though this technique has the benefit of dynamically regenerating SVG files from PlantUML markdown source |
-
-*(note this table won't render? on a normal github readme page - it needs jekyl)*
-
-| Command | Description |
-| --- | --- |
-| git status | List all new or modified files |
-| git diff | Show file differences that haven't been staged |
 
 ### 1 - "Sanitised raw" technique
 

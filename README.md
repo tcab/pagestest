@@ -98,11 +98,11 @@ Tested on:
 | --- | --- | --- | --- |
 | sanitised raw | perfect                        | perfect  | Works perfectly in all scenarios, but it does mean precending all your image url references with `https://raw.githubusercontent.com/tcab/pagestest/master/` |
 | naive         | ok but ugly github framed page | perfect  | If its just GitHub Pages hosting, works fine - even though the url needs an extra part to it `[![alt text](image link)](web link)` - the content links themselves still short, easy url, with no `raw.githubusercontent.com` urls involved.  <br> *Not* suitable on Github main page e.g. README.md due to the ugly github framed page issue *(unless you are not expecting people to click on your images).* |
-| regeneration  | ok but flaky                   | flaky    | Flakiness is not good, even though this technique has the benefit of dynamically regenerating SVG files from PlantUML markdown source. <br>Needs `&cache=no&` to update whenever plantuml markdown changes, at the cost of that slowness and flakiness. |
+| regeneration  | flaky                          | flaky    | Flakiness is not good, even though this technique has the benefit of dynamically regenerating SVG files from PlantUML markdown source. <br>Needs `&cache=no&` to update whenever plantuml markdown changes, at the cost of that slowness and flakiness. <br>I've even had ocurrences of the non cached approach not only not appearing, but not updating - I think because of the regen, it times out and just shows the previous version of this image anyway. FLAKY CITY! |
 
 
 Note:
-- all "GitHub Pages via /docs" techniques need extra syntax to the url to get clickable link
+- all "GitHub Pages via /docs" techniques need extra syntax `[![text](link)](link)` to the url to get clickable link
 - perfect means "works, and has nice link to full browser page svg where you can zoom"
 
 
@@ -214,7 +214,7 @@ e.g. non cached:   (but with usual flakiness viz. images often not appearing)
 
  Then the question is how to update the images when they have indeed changed and you want to regenerate them?  Altering the url somehow does this. Arguably you could insert and remove some arbitrary url parameter e.g.
 
-cached, but forced to update cos of `&ver=xxx` added, where `xxx` is changed to something else any time you want to update: regens ok?  ✅ and is up to date  **not necessarily updating each time - perhaps my `&ver` trick isn't effective** - and its still flaky with the image sometimes not appearing?
+cached, but forced to update cos of `&ver=xxx` added, where `xxx` is changed to something else any time you want to update: regens ok?  ✅ and is up to date  **not necessarily updating each time - perhaps my `&ver` trick isn't effective** - and its still flaky with the image sometimes not appearing.  I think because of the regen, it times out and just shows the previous version of this image anyway.
 
 ![code map example 01](http://www.plantuml.com/plantuml/proxy?ver=xx3&fmt=svg&src=https://raw.githubusercontent.com/tcab/pagestest/master/docs/plantuml/example-01.puml)
 
