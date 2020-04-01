@@ -59,7 +59,7 @@ Tested on:
 |               | GitHub README.md           | GitHub Pages via /docs |
 | --- | --- | --- |
 | sanitised raw | perfect                        | perfect  |
-| naive         | ok but ugly github framed page | perfect  |
+| naive         | ok but ugly github framed page | ok but image doesn't update  |
 | regeneration  | flaky                          | flaky    |
 
 *(more detailed table on main [README.md](https://github.com/tcab/pagestest))*
@@ -82,7 +82,7 @@ Need to add `?sanitize=true` for this to work, as per [this post](https://github
 - works locally on dev machine
 - works on github pages via /docs ✅
 - CLICKING ON IMAGE - **does nothing** - no link is active! ❌ mitigation works ✅
-- updates ok when .svg changes? 
+- updates ok when .svg changes? ✅
 
 
 Even though it makes for more complex urls, try to mitigate lack of link problem with the advice:
@@ -106,7 +106,7 @@ Here is an attempt at using jekyl page variable to simplify the url syntax of th
 - CLICKING ON IMAGE - **does nothing** - no link is active! ❌ mitigation works ✅
 - works locally on dev machine
 - note that `?sanitize=true` not needed, though doesn't hurt.
-- updates ok when .svg changes? 
+- updates ok when .svg changes? ❌ suprising result!
 
 Even though it makes for more complex urls, try to mitigate lack of link problem with the advice:
 > In other words, whatever the syntax for the image, treat that whole syntax as the text to link. So the ugly syntax also works: `[![alt text](image link)](web link)`
