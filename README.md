@@ -104,6 +104,23 @@ Tested on:
 | naive         | ok but ugly github framed page | perfect  | Thus if its just. |
 | regeneration  | ok but flaky                   | flaky    | Flakiness is not good,  |
 
+|               | **GitHub README.md**           | **GitHub Pages via /docs** |
+| sanitised raw | perfect                        | perfect  |
+| naive         | ok but ugly github framed page | perfect  |
+| regeneration  | ok but flaky                   | flaky    |
+
+|               | **GitHub README.md**           | **GitHub Pages via /docs** |
+| --- | --- | --- |
+| sanitised raw | perfect                        | perfect  |
+| naive         | ok but ugly github framed page | perfect  |
+| regeneration  | ok but flaky                   | flaky    |
+
+|               | GitHub README.md           | GitHub Pages via /docs |
+| --- | --- | --- |
+| sanitised raw | perfect                        | perfect  |
+| naive         | ok but ugly github framed page | perfect  |
+| regeneration  | ok but flaky                   | flaky    |
+
 Note:
 - all "GitHub Pages via /docs" techniques need extra syntax to the url to get clickable link
 - perfect means "works, and has nice link to full browser page svg where you can zoom"
