@@ -61,10 +61,11 @@ Tested on:
 | sanitised raw | perfect                        | perfect  |
 | naive         | ok but ugly github framed page | perfect  |
 | regeneration  | flaky                          | flaky    |
-**(more detailed table on main README.md page [README.md](README.md))**
+
+*(more detailed table on main [README.md](README.md))*
 
 Note:
-- all "GitHub Pages via /docs" techniques need extra syntax to the url to get clickable link
+- all "GitHub Pages via /docs" techniques need extra syntax `[![text](link)](link)` to the url to get clickable link
 - perfect means "works, and has nice link to full browser page svg where you can zoom"
 
 
