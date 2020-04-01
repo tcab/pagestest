@@ -1,6 +1,8 @@
 # pagestest
 testing github pages
 
+hi there.  [live demo](https://tcab.github.io/pagestest/).
+
 ## Overview
 
 README.md is served via the usual https://github.com/tcab/pagestest
@@ -30,8 +32,6 @@ There is no local Jeckyl building being done, its all default Github Pages jekyl
 ```
 
 ## Misc
-
-hi there.  [live demo](https://tcab.github.io/pagestest/).
 
 see also the `hello.yml` file in .github/workflows which apparently spins up ubuntu and then runs some commands - every time you push?
 
@@ -104,7 +104,6 @@ Note:
 - perfect means "works, and has nice link to full browser page svg where you can zoom"
 
 
-
 ### 1 - "Sanitised raw" technique
 
 ```
@@ -160,11 +159,11 @@ http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulk
 
 #### more regeneration variant ideas
 
-What about if I take the caching flag off the regeneration technique?
+What about if I take the caching flag off the regeneration technique? ✅ (but will it regen when plantuml changes?)
 
 ![code map example 01](http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/tcab/pagestest/master/docs/plantuml/example-01.puml&fmt=svg)
 
-What about if I refer to take the caching flag off the regeneration technique and refer to
+What about if I refer to take the caching flag off the regeneration technique and refer to ❌
 - raw.githubusercontent.com insead of 
 - raw.github.com
 
