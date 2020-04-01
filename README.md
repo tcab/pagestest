@@ -112,6 +112,12 @@ Tested on:
 | naive         | ok but ugly github framed page | perfect  |
 | regeneration  | ok but flaky                   | flaky    |
 
+|               | GitHub README.md           | GitHub Pages via /docs | X |
+| --- | --- | --- |
+| sanitised raw | perfect                        | perfect  | A |
+| naive         | ok but ugly github framed page | perfect  | B |
+| regeneration  | ok but flaky                   | flaky    | C |
+
 Note:
 - all "GitHub Pages via /docs" techniques need extra syntax to the url to get clickable link
 - perfect means "works, and has nice link to full browser page svg where you can zoom"
