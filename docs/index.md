@@ -62,7 +62,7 @@ Tested on:
 | naive         | ok but ugly github framed page | perfect  |
 | regeneration  | flaky                          | flaky    |
 
-*(more detailed table on main [README.md](README.md))*
+*(more detailed table on main [README.md](https://github.com/tcab/pagestest))*
 
 Note:
 - all "GitHub Pages via /docs" techniques need extra syntax `[![text](link)](link)` to the url to get clickable link
