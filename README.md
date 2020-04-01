@@ -94,7 +94,7 @@ Tested on:
 
 ### Summary
 
-|               | **GitHub README.md**           | **GitHub Pages via /docs** |  Comment |
+|      XX         | **GitHub README.md**           | **GitHub Pages via /docs** |  Comment |
 | sanitised raw | perfect                        | perfect  | The sanitised raw technique works perfectly in all scenarios, but it does mean precending all your image url references with `https://raw.githubusercontent.com/tcab/pagestest/master/` |
 | naive         | ok but ugly github framed page | perfect  | Thus if its just GitHub Pages hosting, the naive technique is fine - even though the url has an extra part to it its still a short, easy url, with no `raw.githubusercontent.com` urls.  Naive technique not suitable on Github main page e,g, README.md due to the ugly github framed page issue - unless you are not expecting people to click on your images. |
 | regeneration  | ok but flaky                   | flaky    | Flakiness is not good, even though this technique has the benefit of dynamically regenerating SVG files from PlantUML markdown source |
@@ -104,18 +104,10 @@ Note:
 - perfect means "works, and has nice link to full browser page svg where you can zoom"
 
 
-|               | **GitHub README.md**           | **GitHub Pages via /docs** |  Comment |
-|               | **GitHub README.md**           | **GitHub Pages via /docs** |  Comment |
-
-| sanitised raw | perfect                        | perfect  | The sanitised raw technique works perfectly in all scenarios, but it does mean precending all your image url references with `https://raw.githubusercontent.com/tcab/pagestest/master/` |
-| sanitised raw | perfect                        | perfect  | The sanitised raw technique works perfectly in all scenarios, but it does mean precending all your image url references with `https://raw.githubusercontent.com/tcab/pagestest/master/` |
-
-| naive         | ok but ugly github framed page | perfect  | Thus if its just GitHub Pages hosting, the naive technique is fine - even though the url has an extra part to it its still a short, easy url, with no `raw.githubusercontent.com` urls.  Naive technique not suitable on Github main page e,g, README.md due to the ugly github framed page issue - unless you are not expecting people to click on your images. |
-| naive         | ok but ugly github framed page | perfect  | Thus if its just GitHub Pages hosting, the naive technique is fine - even though the url has an extra part to it its still a short, easy url, with no `raw.githubusercontent.com` urls.  Naive technique not suitable on Github main page e,g, README.md due to the ugly github framed page issue - unless you are not expecting people to click on your images. |
-
-| regeneration  | ok but flaky                   | flaky    | Flakiness is not good, even though this technique has the benefit of dynamically regenerating SVG files from PlantUML markdown source |
-| regeneration  | ok but flaky                   | flaky    | Flakiness is not good, even though this technique has the benefit of dynamically regenerating SVG files from PlantUML markdown source |
-
+| Command | Description |
+| --- | --- |
+| git status | List all new or modified files |
+| git diff | Show file differences that haven't been staged |
 
 
 ### 1 - "Sanitised raw" technique
@@ -162,9 +154,11 @@ Even though it makes for more complex urls, try to mitigate the **ugly github fr
 
 ```
 http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg
+http://www.plantuml.com/plantuml/proxy?fmt=svg&cache=no&src=https://raw.github.com/tcab/pagestest/master/docs/plantuml/example-01.puml
 ```
+*(latter link version is for a different plantuml file, but also, has the `&fmt=svg` fragment earlier in the url which makes it more understandable)*
 
-![code map example 01](http://www.plantuml.com/plantuml/proxy?fmt=svg&cache=no&src=https://raw.github.com/tcab/pagestest/master/plantuml/example-01.puml)
+![code map example 01](http://www.plantuml.com/plantuml/proxy?fmt=svg&cache=no&src=https://raw.github.com/tcab/pagestest/master/docs/plantuml/example-01.puml)
 
 - works on main github README, but... too slow to refresh, sometimes image fails to appear probably due to timeout ✅😯
 - CLICKING ON IMAGE works and takes you to some `https://camo.githubusercontent.com/...` url where you get the full screen SVG and can zoom ok ✅😯 unreliable and too slow to refresh
