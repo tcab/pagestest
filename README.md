@@ -99,6 +99,11 @@ Tested on:
 | naive         | ok but ugly github framed page | perfect  | Thus if its just GitHub Pages hosting, the naive technique is fine - even though the url has an extra part to it its still a short, easy url, with no `raw.githubusercontent.com` urls.  Naive technique not suitable on Github main page e,g, README.md due to the ugly github framed page issue - unless you are not expecting people to click on your images. |
 | regeneration  | ok but flaky                   | flaky    | Flakiness is not good, even though this technique has the benefit of dynamically regenerating SVG files from PlantUML markdown source |
 
+|      XX         | **GitHub README.md**           | **GitHub Pages via /docs** |  Comment |
+| sanitised raw | perfect                        | perfect  | The sanitised  |
+| naive         | ok but ugly github framed page | perfect  | Thus if its just. |
+| regeneration  | ok but flaky                   | flaky    | Flakiness is not good,  |
+
 Note:
 - all "GitHub Pages via /docs" techniques need extra syntax to the url to get clickable link
 - perfect means "works, and has nice link to full browser page svg where you can zoom"
@@ -165,24 +170,37 @@ http://www.plantuml.com/plantuml/proxy?fmt=svg&cache=no&src=https://raw.github.c
 - does not work locally on dev machine - at least not in vscode previewer.
 - *may* work in local jekyll server but this project isn't set up with local jekill
 
-#### more regeneration variant ideas
+
+
+
+
+
+### 3A - more regeneration variant ideas
+
+#### caching off
 
 What about if I take the *caching flag off** the regeneration technique? ✅ (but will it regen when plantuml changes? nope ❌but the above flaky example does update cos it has caching off)
 
 ![code map example 01](http://www.plantuml.com/plantuml/proxy?fmt=svg&src=https://raw.github.com/tcab/pagestest/master/docs/plantuml/example-01.puml)
 
+#### raw.githubusercontent.com insead of raw.github.com
+
 What about if I refer to take the caching flag off the regeneration technique and refer to ✅
 - raw.githubusercontent.com insead of 
 - raw.github.com
+Result: No difference in behaviour.  Anyway `raw.github.com` -> `raw.githubusercontent.com` just redirects, its the same thing.
 
-cached - regens ok? 
+> The raw.githubusercontent.com domain is used to serve unprocessed versions of files stored in GitHub repositories. If you browse to a file on GitHub and then click the Raw link, that's where you'll go. it means you'll see the contents of the file without any GitHub UI, and files that typically get rendered (e.g. Markdown) won't be. You just see the raw text content of the file.
+
+cached - regens ok? nope ❌
 
 ![code map example 01](http://www.plantuml.com/plantuml/proxy?fmt=svg&src=https://raw.githubusercontent.com/tcab/pagestest/master/docs/plantuml/example-01.puml)
 
-non cached (`&cache=no&`) - regens ok? 
-
+non cached (`&cache=no&`) - regens ok?  ✅
 
 ![code map example 01](http://www.plantuml.com/plantuml/proxy?fmt=svg&cache=no&src=https://raw.githubusercontent.com/tcab/pagestest/master/docs/plantuml/example-01.puml)
 
-TODO: what if I use sanitize in the url? perhaps I don't need to consider this since the sanitisation is for serving the image, whereas here we are merely passing the raw text content to plantuml server.
+Thus its the same problem.
+
+> Note, no point using sanitize in any of these urls since the sanitisation is for serving the image, whereas here we are merely passing the raw text content to plantuml server.
 
