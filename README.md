@@ -97,14 +97,16 @@ Tested on:
 
 |               | GitHub README.md           | GitHub Pages via /docs |  Comment |
 | --- | --- | --- | --- |
-| sanitised raw | perfect                        | perfect  | Works perfectly in all scenarios, but it does mean precending all your image url references with `https://raw.githubusercontent.com/tcab/pagestest/master/` |
-| naive         | ok but ugly github framed page | ok but image doesn't update  | If its just GitHub Pages hosting, initially works fine - even though the url needs an extra part to it `[![alt text](image link)](web link)` - the content links themselves still short, easy url, with no `raw.githubusercontent.com` urls involved.  **HOWEVER** the image doesn't update when the .svg changes under GitHub Pages hosting!! ❌ *(Though .SVG image updates OK on Github main page)* <br> *Not* suitable on Github main page e.g. README.md due to the ugly github framed page issue *(unless you are not expecting people to click on your images).* At least the .SVG image updates OK on Github main page |
+| sanitised raw | perfect | perfect  | Works perfectly in all scenarios, but it does mean precending all your image url references with `https://raw.githubusercontent.com/tcab/pagestest/master/` |
+| naive         | ok but ugly github framed page | ok  | If its just GitHub Pages hosting, initially works fine - even though the url needs an extra part to it `[![alt text](image link)](web link)` - the content links themselves still short, easy url, with no `raw.githubusercontent.com` urls involved. <br> br> *Not* suitable on Github main page e.g. README.md due to the ugly github framed page issue *(unless you are not expecting people to click on your images)*. |
 | regeneration  | flaky                          | flaky    | Flakiness is not good, even though this technique has the benefit of dynamically regenerating SVG files from PlantUML markdown source. <br>Needs `&cache=no&` to update whenever plantuml markdown changes, at the cost of that slowness and flakiness. <br>I've even had ocurrences of the non cached approach not only not appearing, but not updating - I think because of the regen, it times out and just shows the previous version of this image anyway. FLAKY CITY! 😫|
 
 
 Note:
 - all "GitHub Pages via /docs" techniques need extra syntax `[![text](link)](link)` to the url to get clickable link
 - perfect means "works, and has nice link to full browser page svg where you can zoom"
+- all image updating for the "sanitised" and "naive" approaches seem to take a while - which could be a cache/etag/browser issue - but everything eventually updates. Sometimes manually visiting and refresh the https://raw.githubusercontent.com github view in browser helps the effects to ripple through). The Github Pages naive technique seems to be the slowest to update.
+
 
 
 
@@ -121,7 +123,7 @@ Need to add `?sanitize=true` for this to work, as per [this post](https://github
 - works locally on dev machine
 - works on github main page README.md ✅
 - nice link to full browser page svg where you can zoom ✅
-- updates ok when .svg changes? ✅
+- updates ok when .svg changes? 🤨  takes a while to update when underlying .SVG changed
 
 
 
@@ -139,7 +141,7 @@ Need to add `?sanitize=true` for this to work, as per [this post](https://github
 - works on main github README ✅
 - CLICKING ON IMAGE - takes you to ugly github framed page  ❌ mitigation fails - same ugly page ❌
 - Note that `?sanitize=true` not needed, though doesn't hurt.
-- updates ok when .svg changes? ✅
+- updates ok when .svg changes? 🤨  takes a while to update when underlying .SVG changed
 
 Even though it makes for more complex urls, try to mitigate the **ugly github framed page** problem with the advice:
 > In other words, whatever the syntax for the image, treat that whole syntax as the text to link. So the ugly syntax also works: `[![alt text](image link)](web link)`

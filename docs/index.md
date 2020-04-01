@@ -59,7 +59,7 @@ Tested on:
 |               | GitHub README.md           | GitHub Pages via /docs |
 | --- | --- | --- |
 | sanitised raw | perfect                        | perfect  |
-| naive         | ok but ugly github framed page | ok but image doesn't update  |
+| naive         | ok but ugly github framed page | ok   |
 | regeneration  | flaky                          | flaky    |
 
 *(more detailed table on main [README.md](https://github.com/tcab/pagestest))*
@@ -67,6 +67,7 @@ Tested on:
 Note:
 - all "GitHub Pages via /docs" techniques need extra syntax `[![text](link)](link)` to the url to get clickable link
 - perfect means "works, and has nice link to full browser page svg where you can zoom"
+- all image updating for the "sanitised" and "naive" approaches seem to take a while - which could be a cache/etag/browser issue - but everything eventually updates. Sometimes manually visiting and refresh the https://raw.githubusercontent.com github view in browser helps the effects to ripple through). The Github Pages naive technique seems to be the slowest to update.
 
 
 ### 1 - "Sanitised raw" technique
@@ -82,8 +83,7 @@ Need to add `?sanitize=true` for this to work, as per [this post](https://github
 - works locally on dev machine
 - works on github pages via /docs ✅
 - CLICKING ON IMAGE - **does nothing** - no link is active! ❌ mitigation works ✅
-- updates ok when .svg changes? ✅
-
+- updates ok when .svg changes? 🤨  takes a while to update when underlying .SVG changed
 
 Even though it makes for more complex urls, try to mitigate lack of link problem with the advice:
 > In other words, whatever the syntax for the image, treat that whole syntax as the text to link. So the ugly syntax also works: `[![alt text](image link)](web link)`
@@ -106,7 +106,7 @@ Here is an attempt at using jekyl page variable to simplify the url syntax of th
 - CLICKING ON IMAGE - **does nothing** - no link is active! ❌ mitigation works ✅
 - works locally on dev machine
 - note that `?sanitize=true` not needed, though doesn't hurt.
-- updates ok when .svg changes? ❌ suprising result!
+- updates ok when .svg changes? 🤨  takes a while to update when underlying .SVG changed - **slowest to update**
 
 Even though it makes for more complex urls, try to mitigate lack of link problem with the advice:
 > In other words, whatever the syntax for the image, treat that whole syntax as the text to link. So the ugly syntax also works: `[![alt text](image link)](web link)`
