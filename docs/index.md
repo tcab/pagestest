@@ -82,6 +82,7 @@ Need to add `?sanitize=true` for this to work, as per [this post](https://github
 - works locally on dev machine
 - works on github pages via /docs ✅
 - CLICKING ON IMAGE - **does nothing** - no link is active! ❌ mitigation works ✅
+- updates ok when .svg changes? 
 
 
 Even though it makes for more complex urls, try to mitigate lack of link problem with the advice:
@@ -105,6 +106,7 @@ Here is an attempt at using jekyl page variable to simplify the url syntax of th
 - CLICKING ON IMAGE - **does nothing** - no link is active! ❌ mitigation works ✅
 - works locally on dev machine
 - note that `?sanitize=true` not needed, though doesn't hurt.
+- updates ok when .svg changes? 
 
 Even though it makes for more complex urls, try to mitigate lack of link problem with the advice:
 > In other words, whatever the syntax for the image, treat that whole syntax as the text to link. So the ugly syntax also works: `[![alt text](image link)](web link)`
@@ -126,6 +128,7 @@ http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulk
 - CLICKING ON IMAGE - **does nothing** - no link is active!  ❌  mitigation works ✅😱 (but slow and also risks timing out)
 - does not work locally on dev machine - at least not in vscode previewer.
 - *may* work in local jekyll server but this project isn't set up with local jekill
+- updates ok when .svg changes? only if `&cache=no` in url.
 
 I thought maybe Github Pages hosting would improve the "regeneration" technique success rate, but its the same problem.  Overall its a flaky technique. In fact it might be even worse on Github Pages.
 
@@ -135,32 +138,6 @@ Even though it makes for more complex urls, try to mitigate lack of link problem
 [![code map example 01](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg)
 
 
-
-## Regular GitHub serving vs. GitHub Pages serving
-
-All the above techniques need to be tested both on:
-
-- a regular github markdown page e.g. `readme.md`
-- a jeckyll generated github page markdown page
-
-because the serving of the pages may influence the reliability of each technique.
-
-### local serving
-
-Arguably we also need evidence re local serving success via:
-
-- vscode markdown preview
-- jekyll local server
-
-## changing SVG
-
-**TODO**
-
-More investigation and clarification needed here.
-
-once the file is in github it will have a raw link and that won't change when you update it.  Nice.  But will the pages site re-render the site correctly with the updated image or will it aggressively cache, like it does when you include svg file in regular readme in regular github pages?
-
-Looks like it did change, but you have to change some text on the page, otherwise the page is cached - cos the svg *image url* is the same and there is no intelligence detecting it has changed. So change some text on the page instead. This is better than fiddling with imaginary image query strings on the image reference urls in order to try and trick github to re-render the page.
 
 ## Links to other pages
 

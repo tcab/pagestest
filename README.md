@@ -1,7 +1,8 @@
 # pagestest
-testing github pages
+Testing Regular GitHub serving vs. GitHub Pages serving.
+Includes comprehensive .SVG serving experiments in both scenarios.
 
-hi there.  [live demo](https://tcab.github.io/pagestest/).
+View pages served via GitHub Pages [live demo](https://tcab.github.io/pagestest/).
 
 ## Overview
 
@@ -120,7 +121,7 @@ Need to add `?sanitize=true` for this to work, as per [this post](https://github
 - works locally on dev machine
 - works on github main page README.md ✅
 - nice link to full browser page svg where you can zoom ✅
-
+- updates ok when .svg changes? 
 
 
 
@@ -138,6 +139,7 @@ Need to add `?sanitize=true` for this to work, as per [this post](https://github
 - works on main github README ✅
 - CLICKING ON IMAGE - takes you to ugly github framed page  ❌ mitigation fails - same ugly page ❌
 - Note that `?sanitize=true` not needed, though doesn't hurt.
+- updates ok when .svg changes? 
 
 Even though it makes for more complex urls, try to mitigate the **ugly github framed page** problem with the advice:
 > In other words, whatever the syntax for the image, treat that whole syntax as the text to link. So the ugly syntax also works: `[![alt text](image link)](web link)`
@@ -161,6 +163,7 @@ http://www.plantuml.com/plantuml/proxy?fmt=svg&cache=no&src=https://raw.github.c
 - CLICKING ON IMAGE works and takes you to some `https://camo.githubusercontent.com/...` url where you get the full screen SVG and can zoom ok ✅😯 unreliable and too slow to refresh
 - does not work locally on dev machine - at least not in vscode previewer.
 - *may* work in local jekyll server but this project isn't set up with local jekill
+- updates ok when .svg changes? only if `&cache=no` in url.
 
 
 
