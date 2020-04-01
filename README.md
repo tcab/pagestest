@@ -104,6 +104,20 @@ Note:
 - perfect means "works, and has nice link to full browser page svg where you can zoom"
 
 
+|               | **GitHub README.md**           | **GitHub Pages via /docs** |  Comment |
+|               | **GitHub README.md**           | **GitHub Pages via /docs** |  Comment |
+
+| sanitised raw | perfect                        | perfect  | The sanitised raw technique works perfectly in all scenarios, but it does mean precending all your image url references with `https://raw.githubusercontent.com/tcab/pagestest/master/` |
+| sanitised raw | perfect                        | perfect  | The sanitised raw technique works perfectly in all scenarios, but it does mean precending all your image url references with `https://raw.githubusercontent.com/tcab/pagestest/master/` |
+
+| naive         | ok but ugly github framed page | perfect  | Thus if its just GitHub Pages hosting, the naive technique is fine - even though the url has an extra part to it its still a short, easy url, with no `raw.githubusercontent.com` urls.  Naive technique not suitable on Github main page e,g, README.md due to the ugly github framed page issue - unless you are not expecting people to click on your images. |
+| naive         | ok but ugly github framed page | perfect  | Thus if its just GitHub Pages hosting, the naive technique is fine - even though the url has an extra part to it its still a short, easy url, with no `raw.githubusercontent.com` urls.  Naive technique not suitable on Github main page e,g, README.md due to the ugly github framed page issue - unless you are not expecting people to click on your images. |
+
+| regeneration  | ok but flaky                   | flaky    | Flakiness is not good, even though this technique has the benefit of dynamically regenerating SVG files from PlantUML markdown source |
+| regeneration  | ok but flaky                   | flaky    | Flakiness is not good, even though this technique has the benefit of dynamically regenerating SVG files from PlantUML markdown source |
+
+
+
 ### 1 - "Sanitised raw" technique
 
 ```
@@ -150,7 +164,7 @@ Even though it makes for more complex urls, try to mitigate the **ugly github fr
 http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg
 ```
 
-![code map example 01](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg)
+![code map example 01](http://www.plantuml.com/plantuml/proxy?fmt=svg&cache=no&src=https://raw.github.com/tcab/pagestest/master/plantuml/example-01.puml)
 
 - works on main github README, but... too slow to refresh, sometimes image fails to appear probably due to timeout ✅😯
 - CLICKING ON IMAGE works and takes you to some `https://camo.githubusercontent.com/...` url where you get the full screen SVG and can zoom ok ✅😯 unreliable and too slow to refresh
@@ -159,14 +173,22 @@ http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulk
 
 #### more regeneration variant ideas
 
-What about if I take the caching flag off the regeneration technique? ✅ (but will it regen when plantuml changes?)
+What about if I take the *caching flag off** the regeneration technique? ✅ (but will it regen when plantuml changes? nope ❌but the above flaky example does update cos it has caching off)
 
-![code map example 01](http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/tcab/pagestest/master/docs/plantuml/example-01.puml&fmt=svg)
+![code map example 01](http://www.plantuml.com/plantuml/proxy?fmt=svg&src=https://raw.github.com/tcab/pagestest/master/docs/plantuml/example-01.puml)
 
-What about if I refer to take the caching flag off the regeneration technique and refer to ❌
+What about if I refer to take the caching flag off the regeneration technique and refer to ✅
 - raw.githubusercontent.com insead of 
 - raw.github.com
 
-![code map example 01](https://raw.githubusercontent.com/tcab/pagestest/master/docs/plantuml/example-01.puml&fmt=svg)
+cached - regens ok? 
 
-what if I use sanitize in the url? TODO
+![code map example 01](http://www.plantuml.com/plantuml/proxy?fmt=svg&src=https://raw.githubusercontent.com/tcab/pagestest/master/docs/plantuml/example-01.puml)
+
+non cached (`&cache=no&`) - regens ok? 
+
+
+![code map example 01](http://www.plantuml.com/plantuml/proxy?fmt=svg&cache=no&src=https://raw.githubusercontent.com/tcab/pagestest/master/docs/plantuml/example-01.puml)
+
+TODO: what if I use sanitize in the url? perhaps I don't need to consider this since the sanitisation is for serving the image, whereas here we are merely passing the raw text content to plantuml server.
+
