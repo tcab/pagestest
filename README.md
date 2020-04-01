@@ -1,6 +1,36 @@
 # pagestest
 testing github pages
 
+## Overview
+
+README.md is served via the usual https://github.com/tcab/pagestest
+
+Github Pages version is taken from /docs and served via https://tcab.github.io/pagestest/ 
+
+There is no local Jeckyl building being done, its all default Github Pages jekyl building done on the server. We can use variables locally and they work etc.
+
+```
+.
+├── README.md
+├── docs
+│   ├── _config.yml
+│   ├── _data
+│   │   └── people.yml
+│   ├── assets
+│   │   └── img
+│   │       └── header.jpg
+│   ├── images
+│   │   └── mvc-a-architecture.svg
+│   ├── index.md
+│   ├── page2.md
+│   └── plantuml
+│       └── example-01.puml
+├── index.html
+└── index.md
+```
+
+## Misc
+
 hi there.  [live demo](https://tcab.github.io/pagestest/).
 
 see also the `hello.yml` file in .github/workflows which apparently spins up ubuntu and then runs some commands - every time you push?
@@ -64,14 +94,15 @@ Tested on:
 
 ### Summary
 
-|               | **GitHub README.md**           | **GitHub Pages via /docs** |
-| sanitised raw | perfect                        | perfect  |
-| naive         | ok but ugly github framed page | perfect  |
-| regeneration  | ok but flaky                   | flaky    |
+|               | **GitHub README.md**           | **GitHub Pages via /docs** |  Comment |
+| sanitised raw | perfect                        | perfect  | The sanitised raw technique works perfectly in all scenarios, but it does mean precending all your image url references with `https://raw.githubusercontent.com/tcab/pagestest/master/` |
+| naive         | ok but ugly github framed page | perfect  | Thus if its just GitHub Pages hosting, the naive technique is fine - even though the url has an extra part to it its still a short, easy url, with no `raw.githubusercontent.com` urls.  Naive technique not suitable on Github main page e,g, README.md due to the ugly github framed page issue - unless you are not expecting people to click on your images. |
+| regeneration  | ok but flaky                   | flaky    | Flakiness is not good, even though this technique has the benefit of dynamically regenerating SVG files from PlantUML markdown source |
 
 Note:
 - all "GitHub Pages via /docs" techniques need extra syntax to the url to get clickable link
 - perfect means "works, and has nice link to full browser page svg where you can zoom"
+
 
 
 ### 1 - "Sanitised raw" technique
@@ -126,3 +157,17 @@ http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulk
 - CLICKING ON IMAGE works and takes you to some `https://camo.githubusercontent.com/...` url where you get the full screen SVG and can zoom ok ✅😯 unreliable and too slow to refresh
 - does not work locally on dev machine - at least not in vscode previewer.
 - *may* work in local jekyll server but this project isn't set up with local jekill
+
+#### more regeneration variant ideas
+
+What about if I take the caching flag off the regeneration technique?
+
+![code map example 01](http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/tcab/pagestest/master/docs/plantuml/example-01.puml&fmt=svg)
+
+What about if I refer to take the caching flag off the regeneration technique and refer to
+- raw.githubusercontent.com insead of 
+- raw.github.com
+
+![code map example 01](https://raw.githubusercontent.com/tcab/pagestest/master/docs/plantuml/example-01.puml&fmt=svg)
+
+what if I use sanitize in the url? TODO
