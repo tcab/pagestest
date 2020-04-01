@@ -98,7 +98,7 @@ Tested on:
 | --- | --- | --- | --- |
 | sanitised raw | perfect                        | perfect  | Works perfectly in all scenarios, but it does mean precending all your image url references with `https://raw.githubusercontent.com/tcab/pagestest/master/` |
 | naive         | ok but ugly github framed page | perfect  | If its just GitHub Pages hosting, works fine - even though the url needs an extra part to it `[![alt text](image link)](web link)` - the content links themselves still short, easy url, with no `raw.githubusercontent.com` urls involved.  <br> *Not* suitable on Github main page e.g. README.md due to the ugly github framed page issue *(unless you are not expecting people to click on your images).* |
-| regeneration  | ok but flaky                   | flaky    | Flakiness is not good, even though this technique has the benefit of dynamically regenerating SVG files from PlantUML markdown source. <br>Needs `&cache=no&` to update whenever plantuml markdown changes, at the cost of slowness and flakiness.  |
+| regeneration  | ok but flaky                   | flaky    | Flakiness is not good, even though this technique has the benefit of dynamically regenerating SVG files from PlantUML markdown source. <br>Needs `&cache=no&` to update whenever plantuml markdown changes, at the cost of that slowness and flakiness. |
 
 
 Note:
@@ -198,23 +198,23 @@ Thus its the same problem.
 
 #### avoiding flakiness by leaving caching on
 
- Presumably leaving caching on will avoid the flakiness but at the expense that the diagrams don't update.  
+Leaving caching on will avoid the flakiness but at the expense that the **diagrams don't update**.  
  
- e.g. non cached:   (but with usual flakiness viz. images often not appearing)
-
-![code map example 01](http://www.plantuml.com/plantuml/proxy?fmt=svg&cache=no&src=https://raw.githubusercontent.com/tcab/pagestest/master/docs/plantuml/example-01.puml)
-![code map example 01](http://www.plantuml.com/plantuml/proxy?fmt=svg&cache=no&src=https://raw.githubusercontent.com/tcab/pagestest/master/docs/plantuml/example-01.puml)
-![code map example 01](http://www.plantuml.com/plantuml/proxy?fmt=svg&cache=no&src=https://raw.githubusercontent.com/tcab/pagestest/master/docs/plantuml/example-01.puml)
-
-cached:  (all these appear OK but they are out of date)
+e.g. cached:  (reliable - not flaky anymore - all these appear OK but they are out of date)
 
 ![code map example 01](http://www.plantuml.com/plantuml/proxy?fmt=svg&src=https://raw.githubusercontent.com/tcab/pagestest/master/docs/plantuml/example-01.puml)
 ![code map example 01](http://www.plantuml.com/plantuml/proxy?fmt=svg&src=https://raw.githubusercontent.com/tcab/pagestest/master/docs/plantuml/example-01.puml)
 ![code map example 01](http://www.plantuml.com/plantuml/proxy?fmt=svg&src=https://raw.githubusercontent.com/tcab/pagestest/master/docs/plantuml/example-01.puml)
+
+e.g. non cached:   (but with usual flakiness viz. images often not appearing)
+
+![code map example 01](http://www.plantuml.com/plantuml/proxy?fmt=svg&cache=no&src=https://raw.githubusercontent.com/tcab/pagestest/master/docs/plantuml/example-01.puml)
+![code map example 01](http://www.plantuml.com/plantuml/proxy?fmt=svg&cache=no&src=https://raw.githubusercontent.com/tcab/pagestest/master/docs/plantuml/example-01.puml)
+![code map example 01](http://www.plantuml.com/plantuml/proxy?fmt=svg&cache=no&src=https://raw.githubusercontent.com/tcab/pagestest/master/docs/plantuml/example-01.puml)
 
  Then the question is how to update the images when they have indeed changed and you want to regenerate them?  Altering the url somehow does this. Arguably you could insert and remove some arbitrary url parameter e.g.
 
-cached, but forced to update cos of `&ver=xxx` added, where `xxx` is changed to something else any time you want to update: regens ok?  ✅ and is up to date  ✅ but still possibly flaky with the image sometimes not appearing? 
+cached, but forced to update cos of `&ver=xxx` added, where `xxx` is changed to something else any time you want to update: regens ok?  ✅ and is up to date  **not necessarily updating each time - perhaps my `&ver` trick isn't effective** - still possibly flaky with the image sometimes not appearing? **not sure, seems to appear every time so far**
 
-![code map example 01](http://www.plantuml.com/plantuml/proxy?ver=xx2&fmt=svg&src=https://raw.githubusercontent.com/tcab/pagestest/master/docs/plantuml/example-01.puml)
+![code map example 01](http://www.plantuml.com/plantuml/proxy?ver=xx3&fmt=svg&src=https://raw.githubusercontent.com/tcab/pagestest/master/docs/plantuml/example-01.puml)
 
