@@ -102,7 +102,7 @@ Tested on:
 
 |               | GitHub README.md           | GitHub Pages via /docs |  Comment |
 | --- | --- | --- |
-| sanitised raw | perfect                        | perfect  | The sanitised raw technique works perfectly in all scenarios, but it does mean precending all your image url references with `https://raw.githubusercontent.com/tcab/pagestest/master/` |
+| sanitised raw | perfect                        | perfect  | The sanitised raw technique works perfectly in all scenarios, but it does mean precending all your image url references with |
 | naive         | ok but ugly github framed page | perfect  | Thus if its just GitHub Pages hosting,  |
 | regeneration  | ok but flaky                   | flaky    | Flakiness is not good, even though this technique has the benefit of dynamically regenerating SVG files from PlantUML markdown source |
 
